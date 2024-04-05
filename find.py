@@ -6,7 +6,7 @@ import os, time
 import pandas as pd
 import re
 import threading
-import google.generativeai as genai
+# import google.generativeai as genai
 # Path to your WebDriver. Make sure you have the appropriate WebDriver downloaded.
 # Here, I'm using Chrome WebDriver. Update the path accordingly if you're using a different browser.
 # driver_path = '/path/to/your/chromedriver'
@@ -60,7 +60,7 @@ def from_bse(urls, id = [], pdf_list = []):
     print("bse here")
     c = 0
     for url in urls:
-        if c < 3:
+        if c < 100:
             try:
                 # Open the webpage
                 driver.get(url)
@@ -93,7 +93,7 @@ def from_screener(urls, id = [], pdf_list = []):
     print("screener here")
     c = 0
     for url in urls:
-        if c < 3:
+        if c < 100:
             try:
                 # Open the webpage
                 driver.get(url)
@@ -191,8 +191,9 @@ def combine_check():
 
 import requests
 import re
-import pdftotext
+# import pdftotext
 
+'''
 def text_extraction(path):
   with open(path, "rb") as f:
       pdf = pdftotext.PDF(f)
@@ -213,7 +214,7 @@ def filemk(furl):
   return infostr
 
 
-'''
+
 def add_yq():
     genai.configure(api_key=GOOGLE_API_KEY)
 
